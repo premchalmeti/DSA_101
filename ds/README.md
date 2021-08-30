@@ -17,8 +17,12 @@
 - Is concrete view; defines how the data to be stored
 
 
-- linear DS:
-    - stack, queue, linked list
+- Linear DS:
+    - [Arrays](https://github.com/premchalmeti/DS_and_algos_practice/tree/master/ds/arrays)
+    - [Stack](https://github.com/premchalmeti/DS_and_algos_practice/tree/master/ds/stacks)
+    - [Queue](https://github.com/premchalmeti/DS_and_algos_practice/tree/master/ds/cqueue)
+    - [Linked list](https://github.com/premchalmeti/DS_and_algos_practice/tree/master/ds/linked_list)
 
-- non-linear DS:
-    - tree, graph
+- Non-linear DS:
+    - [Tree](https://github.com/premchalmeti/DS_and_algos_practice/tree/master/ds/trees)
+    - [Graph](https://github.com/premchalmeti/DS_and_algos_practice/tree/master/ds/graphs)

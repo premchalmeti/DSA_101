@@ -1,4 +1,7 @@
-from binary_tree import Node
+import os, sys;
+sys.path.append(os.environ.get('DSPATH', ''));
+
+from trees.binary_tree import Node
 
 
 class BinarySearchTree:

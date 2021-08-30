@@ -2,12 +2,12 @@
 import os, sys;
 sys.path.append(os.environ.get('DSPATH', ''));
 
-from cqueue import CQueue
+from cqueue import Queue
 from trees import BinaryTree
 
 
 def dfs(root):
-    q = CQueue()
+    q = Queue()
     q.enq(root)
 
     while q:

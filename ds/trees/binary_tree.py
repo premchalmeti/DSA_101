@@ -5,7 +5,7 @@ import os, sys;
 sys.path.append(os.environ.get('DSPATH', ''));
 
 from trees.exceptions import EmptyTreeException
-from cqueue import CQueue
+from cqueue import Queue
 
 
 class Node:
@@ -126,7 +126,7 @@ class BinaryTree:
         self.__root.postorder()
 
     def level_order(self):
-        q = CQueue()
+        q = Queue()
         node = self.__root
         q.enq(node)
 
