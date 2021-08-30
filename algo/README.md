@@ -21,7 +21,7 @@
         2. quick sort
         3. binary search
 
-3. Backtracking:
+3. [Backtracking](https://github.com/premchalmeti/DS_and_algos_practice/tree/master/algo/backtracking)
     - try a decision, check if it leads to a solution if it doesn't undo operation and check
     - trial and error
     - example:

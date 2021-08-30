@@ -59,22 +59,21 @@ class Deque(CircularQueue):
 
 
 if __name__ == '__main__':
-    import pdb;pdb.set_trace()
     dq = Deque(4)
 
     dq.enq('Song1')
     dq.enq_front('Song2')
     dq.enq_front('Song3')
 
-    # song1
-    print(dq.deq())
     # song3
+    print(dq.deq())
+    # song1
     print(dq.deq_rear())
 
     dq.enq_front('Song4')
 
     # song4
-    print(dq.deq_front())
+    print(dq.deq())
 
     # song2
     print(dq.deq())

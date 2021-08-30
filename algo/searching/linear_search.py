@@ -23,4 +23,6 @@ def linear_search(nos: List[int], tgt) -> int:
 
 
 if __name__ == "__main__":
-    pass
+    nos = [1, -1, 2, 2, 3, 0, 3]
+    tgt = 3
+    print(linear_search(nos, tgt))
