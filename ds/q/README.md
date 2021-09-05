@@ -76,3 +76,14 @@
 
 - Applications:
 1. Dijkstra's shortest path using PQ
+
+
+### Reference: https://docs.python.org/3/tutorial/datastructures.html#using-lists-as-queues
+
+### Few notes for Python implementation of Queue:
+
+- Lists are not efficient for queue implementation
+- While appends and pops from the end of list are fast, doing inserts 
+    or pops from the beginning of a list is slow 
+    (because all of the other elements will be shifted by one)
+- hence python recommends collections.deque implementation

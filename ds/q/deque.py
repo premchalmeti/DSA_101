@@ -1,36 +1,4 @@
-# lists are not efficient for queue implementation
-# While appends and pops from the end of list are fast, 
-# doing inserts or pops from the beginning of a list is slow 
-# (because all of the other elements have to be shifted by one).
-# refer: https://docs.python.org/3/tutorial/datastructures.html#using-lists-as-queues
-
-# to be implemented
-def test_builtin_deque():
-    from collections import deque
-    dq = deque()
-
-    dq.append('Song1')
-    dq.appendleft('Song2')
-    dq.appendleft('Song3')
-
-    # song1
-    print(dq.pop())
-    # song3
-    print(dq.popleft())
-
-    dq.appendleft('Song4')
-
-    # song4
-    print(dq.popleft())
-
-    # song2
-    print(dq.pop())
-
-
-import os, sys;
-sys.path.append(os.environ.get('DSPATH', ''));
-
-from cqueue import CircularQueue, exceptions
+from ds.q import CircularQueue, exceptions
 
 
 class Deque(CircularQueue):

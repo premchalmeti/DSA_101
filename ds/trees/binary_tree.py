@@ -1,11 +1,8 @@
 from __future__ import annotations
 from typing import Optional
 
-import os, sys;
-sys.path.append(os.environ.get('DSPATH', ''));
-
-from trees.exceptions import EmptyTreeException
-from cqueue import Queue
+from ds.trees.exceptions import EmptyTreeException
+from ds.q import Queue
 
 
 class Node:
@@ -118,12 +115,15 @@ class BinaryTree:
 
     def inorder(self):
         self.__root.inorder()
+        print()
     
     def preorder(self):
         self.__root.preorder()
+        print()
 
     def postorder(self):
         self.__root.postorder()
+        print()
 
     def level_order(self):
         q = Queue()
@@ -169,21 +169,19 @@ if __name__ == '__main__':
     tree.goto('G')
     tree.link_left('J')
 
-    print("\nInorder Traversal:")
+    print("\nIn-order Traversal:")
     tree.inorder()
 
-    print("\nPreorder Traversal:")
+    print("\nPre-order Traversal:")
     tree.preorder()
 
-    print("\nPostorder Traversal:")
+    print("\nPost-order Traversal:")
     tree.postorder()
 
-
-    print("\nLevelorder Traversal:")
+    print("\nLevel-order Traversal:")
     tree.level_order()
 
-
-    print("height:", tree.height)
+    print("\nHeight:", tree.height)
 
     #     1
     #    / \
@@ -202,4 +200,4 @@ if __name__ == '__main__':
     tree.goto(4)
     tree.link_right(5)
 
-    print('height:', tree.height)
+    print('\nHeight:', tree.height)

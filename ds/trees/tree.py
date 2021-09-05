@@ -1,10 +1,5 @@
-import os, sys;
-sys.path.append(os.environ.get('DSPATH', ''));
-
-from trees.exceptions import (
-    EmptyTreeException, ParentNodeNotFound, ChildAlreadyExists
-)
-from stacks.stack import Stack
+from ds.trees import exceptions
+from ds.stacks import Stack
 
 tree_stack = Stack()
 
@@ -43,7 +38,7 @@ class Tree:
 
     def append(self, node, parent):
         if not self.get_root():
-            raise EmptyTreeException("Tree is not created yet")
+            raise exceptions.EmptyTreeException("Tree is not created yet")
 
         if isinstance(parent, Node):
             parent = parent.get_data()
@@ -63,10 +58,10 @@ class Tree:
                 tree_stack.push(c)
 
         if not curr.get_data() == parent:
-            raise ParentNodeNotFound(f"{parent} parent node not found")
+            raise exceptions.ParentNodeNotFound(f"{parent} parent node not found")
 
         if curr.get_child(node):
-            raise ChildAlreadyExists(f"{node} child already exists")
+            raise exceptions.ChildAlreadyExists(f"{node} child already exists")
 
         curr.append_child(node)
         print("Added", curr, "->", node)

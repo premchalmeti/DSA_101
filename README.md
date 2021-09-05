@@ -4,14 +4,12 @@ This repository contains the python implementation of standard Data Structures, 
 
 ----
 
-- To make the programs inside `ds/` to work properly. 
-- Inside the `ds/.env`, set the absolute path of `ds/`
+## Setup
 
+- Since the algorithms and DS use other DS as well so to for imports to work properly
+- Please add the location of root directory of this repo in your `PYTHONPATH`
+- like,
 
-        .env
-        export DSPATH=.../ds/
-
-    This environment variable is added as `PYTHONPATH` while importing the data structures.
-
-
-- If your terminal doesn't support auto-loading of `.env` file then append the code inside [gist](https://gist.github.com/premchalmeti/19efc522fc96c47c5344c83dd6853951) inside your `.bashrc`. This will enable the auto-load of .env.
+    export PYTHONPATH=$PYTHONPATH:/home/workspace/DSA_practice/
+    
+- To avoid updating PYTHONPATH for each run. Add above export in your `~/.bashrc` file

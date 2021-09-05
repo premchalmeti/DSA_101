@@ -1,7 +1,4 @@
-import os, sys;
-sys.path.append(os.environ.get('DSPATH', ''));
-
-from cqueue import Queue, exceptions
+from ds.q import Queue, exceptions
 
 
 class CircularQueue(Queue):

@@ -1,7 +1,4 @@
-import os, sys;
-sys.path.append(os.environ.get('DSPATH', ''));
-
-from trees.binary_tree import Node
+from ds.trees.binary_tree import Node
 
 
 class BinarySearchTree:
@@ -42,12 +39,15 @@ class BinarySearchTree:
 
     def inorder_traverse(self):
         self.root.inorder()
+        print()
     
     def preorder_traverse(self):
         self.root.preorder()
+        print()
     
     def postorder_traverse(self):
         self.root.postorder()
+        print()
 
 
 if __name__ == '__main__':

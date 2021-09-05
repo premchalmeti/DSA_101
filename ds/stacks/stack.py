@@ -1,9 +1,4 @@
-
-class StackUnderFlowError(Exception):
-    pass
-
-class StackOverFlowError(Exception):
-    pass
+from ds.stacks import exceptions
 
 
 class Stack:
@@ -14,14 +9,14 @@ class Stack:
 
     def push(self, ele):
         if self.max and self.top == self.max-1:
-            raise StackOverFlowError(f"Stack exceeded {self.max} max size")
+            raise exceptions.StackOverFlowError(f"Stack exceeded {self.max} max size")
 
         self.top += 1
         self.container.append(ele)
 
     def pop(self):
         if self.top == -1:
-            raise StackUnderFlowError()
+            raise exceptions.StackUnderFlowError()
 
         self.top -= 1
         return self.container.pop()

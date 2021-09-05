@@ -1,8 +1,6 @@
-import os, sys;
-sys.path.append(os.environ.get('DSPATH', ''));
+from ds import utils
+from ds.q import exceptions
 
-import utils
-from cqueue.exceptions import QueueOverFlowError, QueueUnderFlowError
 
 class Queue:
     def __init__(self, _max: int=None):
@@ -14,7 +12,7 @@ class Queue:
 
     def enq(self, item: object):
         if self.max and self.rear == self.max-1:
-            raise QueueOverFlowError(self.max)
+            raise exceptions.QueueOverFlowError(self.max)
         self.rear += 1
         if self.front == -1:
             self.front += 1
@@ -22,7 +20,7 @@ class Queue:
 
     def deq(self) -> object:
         if not self:
-            raise QueueUnderFlowError()
+            raise exceptions.QueueUnderFlowError()
 
         item = self._container[self.front]
         self._container[self.front] = None
