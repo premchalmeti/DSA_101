@@ -1,25 +1,12 @@
-"""
-    Singly Linked List Implementation with following methods,
-    append([data=data], [node=node])
-    prepend([data=data], [node=node])
-    insert_at(pos, [data=data], [node=node])
-    print_list()
-    reverse()
-"""
+from dataclasses import dataclass
+from singly import Node
 
 
-class Node:
+class DNode(Node):
+    prev: Node
+    data: object
+    nxt: Node
 
-    def __init__(self, data=0):
-        super().__init__()
-        self.next = None
-        self.prev = None
-        self.data = data
-
-    def link(self, new_node):
-        self.next.prev = new_node
-        new_node.prev = self
-        self.next = new_node
 
 # to be implemented
 class SinglyList:
@@ -29,7 +16,7 @@ class SinglyList:
         self.tail = None
 
     def _create_node(self, data):
-        return Node(data)
+        return DNode(data)
 
     def _check_data_or_node(self, data, node):
         if not data and not node:

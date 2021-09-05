@@ -1,0 +1,3 @@
+
+class NodeNotFoundError(Exception):
+    pass
