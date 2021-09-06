@@ -14,34 +14,18 @@ class Node:
     __repr__ = __str__
 
 
-NODE_CLASS = Node
-
-
-def change_node_cls(cls):
-    global NODE_CLASS
-    NODE_CLASS = cls
-
-
-def get_node_cls():
-    return NODE_CLASS
-
-
 class SinglyList:
+    NODE_CLS = Node
+
     def __init__(self, data=None):
         self.head = self._create_node(data) if data else None
         self.rear = self.head
 
-    def _create_node(self, data) -> Node:
-        return NODE_CLASS(data)
+    def _create_node(self, *args, **kwargs) -> Node:
+        return self.NODE_CLS(*args, **kwargs)
 
-    def _check_input(self, data, node: Node):
-        if not data and not node:
-            raise ValueError("Data or Node is needed for New Node")
-        if data and node:
-            raise ValueError("Data and Node are mutually exclusive")
-
-    def append_data(self, data):
-        node = self._create_node(data)
+    def append_data(self, *args, **kwargs):
+        node = self._create_node(*args, **kwargs)
         self.append_node(node)
 
     def append_node(self, node: Node):
@@ -53,8 +37,8 @@ class SinglyList:
 
         self.rear = node
 
-    def prepend_data(self, data):
-        node = self._create_node(data)
+    def prepend_data(self, *args, **kwargs):
+        node = self._create_node(*args, **kwargs)
         self.prepend_node(node)
 
     def prepend_node(self, node: Node):

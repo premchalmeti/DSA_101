@@ -81,7 +81,7 @@
         - Using Heap DS
 
     - Applications:
-        1. Dijkstra's shortest path using PQ
+        1. Dijkstra's shortest path, Prim'm minimum spanning Tree using PQ
         2. CPU scheduling algo; CPU process jobs with high priority first
 
 

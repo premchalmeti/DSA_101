@@ -1,4 +1,4 @@
 from .queue import Queue
 from .circular_queue import CircularQueue
 from .deque import Deque
-import exceptions
+from ds.q import exceptions
