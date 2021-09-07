@@ -17,9 +17,21 @@
 
 # get(3): c     container: [{2: 'b'}, {4: 'd'}, {6: 'f'}, {3: 'c'}]
 # note: as 3 is accessed recently its chances of eviction is least
-
+# https://www.geeksforgeeks.org/lru-cache-implementation/
+# https://leetcode.com/problems/lru-cache/
+from ds.q import Queue
 
 class CacheStore:
     def __init__(self, capacity) -> None:
-        super().__init__()
         self.capacity = capacity
+        self.q = Queue()
+        self.lookup = {}
+
+    def put(self, k, v):
+        self.lookup[k] = v
+        self.q.enq({k: v})
+    
+    def get(self, k) -> object:
+        item = self.q.deq()
+        self.q.enq(item)
+        return item

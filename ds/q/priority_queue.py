@@ -68,3 +68,6 @@ if __name__ == '__main__':
 
     # lowest
     print(pq.deq())
+
+    # expect LinkedListEmptyError
+    print(pq.deq())

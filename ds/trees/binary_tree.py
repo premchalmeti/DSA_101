@@ -78,7 +78,7 @@ class BinaryTree:
         elif data:
             root = Node(data)
 
-        self.__root = root
+        self.root = root
         self.curr = root
 
     def find_node(self, node_obj: Node, data: object) -> Optional[Node]:
@@ -90,7 +90,7 @@ class BinaryTree:
             or self.find_node(node_obj.right, data)
 
     def _check_is_tree_empty(self):
-        if not self.__root:
+        if not self.root:
             raise EmptyTreeException("Tree is Empty")
 
     def link_left(self, new_data: object):
@@ -110,24 +110,21 @@ class BinaryTree:
 
         self.curr = node
 
-    def get_root(self) -> Node:
-        return self.__root
-
     def inorder(self):
-        self.__root.inorder()
+        self.root.inorder()
         print()
     
     def preorder(self):
-        self.__root.preorder()
+        self.root.preorder()
         print()
 
     def postorder(self):
-        self.__root.postorder()
+        self.root.postorder()
         print()
 
     def level_order(self):
         q = Queue()
-        node = self.__root
+        node = self.root
         q.enq(node)
 
         while q:
@@ -143,7 +140,7 @@ class BinaryTree:
 
     @property
     def height(self):
-        return self.__root.height()
+        return self.root.height()
 
 
 if __name__ == '__main__':
@@ -162,7 +159,7 @@ if __name__ == '__main__':
     tree.link_left('H')
     tree.link_right('I')
 
-    tree.goto('C', from_node=tree.get_root())
+    tree.goto('C', from_node=tree.root)
     tree.link_left('F')
     tree.link_right('G')
 

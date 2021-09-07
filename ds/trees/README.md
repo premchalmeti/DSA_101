@@ -12,39 +12,39 @@
 
 ## Terminology:
 
-    - node: element of a tree (M, B)
+- node: element of a tree (M, B)
 
-    - edges/branches: the lines connecting the nodes
+- edges/branches: the lines connecting the nodes
 
-    - parent node: immediate predecessor of a node [M is parent of B, C, R, E]
+- parent node: immediate predecessor of a node [M is parent of B, C, R, E]
 
-    - Child node: immediate successor of a node [B, C, R, E are childs of M]
+- Child node: immediate successor of a node [B, C, R, E are childs of M]
 
-    - Root node: node that doesnt have a parent node [M is root]
+- Root node: node that doesnt have a parent node [M is root]
 
-    - terminal/leaf node: node that doesnt have child node. All other nodes are non-terminal nodes [K, G, F, L]
+- terminal/leaf node: node that doesnt have child node. All other nodes are non-terminal nodes [K, G, F, L]
 
-    - level: distance of that node from root. root node is at distance 0 [B,C,R,E is level 1, K,G,F,L is level 2]
+- level: distance of that node from root. root node is at distance 0 [B,C,R,E is level 1, K,G,F,L is level 2]
 
-    - height/depth of a tree: highest level of a tree + 1 [height of above tree is 3]
+- height/depth of a tree: highest level of a tree + 1 [height of above tree is 3]
 
-    - siblings: two or more nodes having same parent [B, C are siblings]
+- siblings: two or more nodes having same parent [B, C are siblings]
 
-    - path: path of a node is sequence of nodes [path of k is M->B->K]
+- path: path of a node is sequence of nodes [path of k is M->B->K]
 
-    - Ancestor and Descendent: [M, B are ancestor of k]
-        - if Na node lies in the unique path from root node to Nm then Na is ancestor of Nm. 
-        - Nm us descendent of Na
+- Ancestor and Descendent: [M, B are ancestor of k]
+    - if Na node lies in the unique path from root node to Nm then Na is ancestor of Nm. 
+    - Nm us descendent of Na
 
-    - Subtree: [BKG is subtree, C is subtree, R is subtree, EFL is another subtree]
-        - tree can be divided into subtrees
+- Subtree: [BKG is subtree, C is subtree, R is subtree, EFL is another subtree]
+    - tree can be divided into subtrees
 
-    - degree:
-        - the no of subtrees or child nodes is degree
-        - M: 4, B: 2, C: 0
+- degree:
+    - the no of subtrees or child nodes is degree
+    - M: 4, B: 2, C: 0
 
-    - forest:
-        - if root is removed we get forest of subtrees
+- forest:
+    - if root is removed we get forest of subtrees
     
 
 ## Types of trees:
@@ -108,6 +108,14 @@
 
 
 3. [Binary Search Tree](https://github.com/premchalmeti/DS_and_algos_practice/blob/master/ds/trees/binary_search_tree.py)
+
+- ![BST](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/1200px-Binary_search_tree.svg.png)
+
+- left subtree has elements less than root
+- left subtree has elements greater than root
+- left and right subtree are also BST
+- Note: Duplicate keys not allowed
+
 4. B Tree
 5. B+ Tree
 6. Red-black Tree

@@ -9,3 +9,11 @@ class ParentNodeNotFound(Exception):
 
 class ChildAlreadyExists(Exception):
     pass
+
+
+class DuplicateKeyError(Exception):
+    pass
+
+
+class NodeNotFound(Exception):
+    pass

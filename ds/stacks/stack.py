@@ -37,12 +37,12 @@ class Stack:
         return len(self.container)
 
     def __str__(self):
-        return f"{', '.join(self.container)}"
+        return f"{', '.join(map(str, self.container))}"
 
     __repr__ = __str__
 
     def __bool__(self):
-        return self.is_empty()
+        return not self.is_empty()
 
 
 if __name__ == '__main__':

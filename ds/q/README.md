@@ -79,6 +79,10 @@
         - Using Queue
         - Using sorted list
         - Using Heap DS
+    
+    - Complexity
+        - enqueue are O(n) since items are inserted according to priority [highest priority first]
+        - dequeue are O(1) since head element is processed
 
     - Applications:
         1. Dijkstra's shortest path, Prim'm minimum spanning Tree using PQ
