@@ -6,7 +6,7 @@ This repository contains the python implementation of standard Data Structures, 
 
 ## Setup
 
-- Since the algorithms and DS use other DS as well so to for imports to work properly
+- Since the algorithms and DS use other DS as well so for imports to work properly
 - Please add the location of root directory of this repo in your `PYTHONPATH`
 
         export PYTHONPATH=$PYTHONPATH:/home/workspace/DSA_practice/
