@@ -1,83 +1,42 @@
-# basic operations
-# traverse
-# insert
-# delete
-# search
-# update
-from __future__ import print_function
-import sys
+from functools import reduce
 
 
-def _traverse(sarr=None, iarr=None):
-    # traverse: to only print
-    # list comprehension to generate new list by traversing list
-    sarr = sarr or list()
-    iarr = iarr or list()
+# 1. Create:
+nos = list(range(10))
+chars = list('Premkumar')
 
-    for no in iarr:
-        sys.stdout.write(str(no))
+# 2. Read: iterate: loops, filter, map, reduce
+print('Number array', nos)
+print("Character array", chars)
+print("Joined string", ", ".join(list(map(str, chars))))
 
-    sys.stdout.flush()
+evens = [n for n in nos if n % 2 == 0]
+print("Even nos", evens)
 
-    print(', '.join(sarr))
+sqaures = list(map(lambda n: n * n, evens))
+print("Square of evens", sqaures)
 
-    # slicing
-    print(sarr[::])
+odds = list(filter(lambda n: n % 2 != 0, nos))
+print("Odd nos", odds)
 
+sum = reduce(lambda acc, n: acc+n, odds)
+print("Sum of odd nos", sum)
 
+# 3. Update
+ch = 'k'
+i = chars.index(ch)
+print(f"Index of {ch} is {i}", chars)
 
-def _insert(arr, index, ele):
-    # insertion
-    arr.insert(index, ele)
-    # arr.append(ele)
-    # arr.extend([ele])
+rep = 'm'
+chars[i] = rep
+print(f"Replaced {ch} with {rep}", chars)
 
+del chars[i]
+print(f"Deleted {i}th char which was {rep}", chars)
 
-def _update(arr, ele, index=None, oele=None):
-    index = index or arr.index(oele)
+ch = 'a'
+chars.remove(ch)
+print(f'Removed {ch}', chars)
 
-    arr[index] = ele
-
-
-def _delete(arr, start=None, end=None, ele=None):
-    if start and end:
-        del arr[start:end]
-    elif start:
-        del arr[start]
-        # arr.pop(start)
-    elif ele:
-        # if ele not in list throws ValueError
-        arr.remove(ele)
-    else:
-        arr.pop()
-    # clear() to delete all eles
-
-
-def _search(arr, ele):
-    # if ele not in arr throws ValueError
-    # todo: implement binary search on strings
-    # count(ele)-> returns count of ele
-    # print(arr.index(ele))
-    # membership test
-    print(ele in arr)
-
-
-if __name__ == '__main__':
-    numbers = [1, 2, 3, 4]
-    names = ['premkumar', 'kartik', 'milind']
-
-    _traverse(iarr=numbers)
-    _traverse(sarr=names)
-
-    _insert(names, index=1, ele='shubham')
-    _traverse(sarr=names)
-
-    _update(names, index=1, ele='suvarna')
-    _update(names, oele='suvarna', ele='prem')
-    _traverse(sarr=names)
-
-    _delete(names, ele='shubham')
-    # _delete(names, start=1)
-    print(names)
-
-    _search(names, 'premkumar')
+ch = chars.pop() # last char also accepts index to pop out
+print(f'Popped {ch}')

@@ -1,19 +1,51 @@
-from __future__ import print_function
+# Python supports arrays (homogenous) DS
+# https://docs.python.org/3/library/array.html
+
+from array import array
 from functools import reduce
 
-numbers = [1, 2, 3, 4]
 
-# list comprehension
+# 1. Create: Array takes typecode
+chars = array('b')
+chars.fromlist(list(map(ord, list("Premkumar"))))
 
-even_nos = [no for no in numbers if no % 2 == 0]
+nos = array('i')
+nos.fromlist(list(range(10)))
 
-# because in python3 filter, map returns views
-odd_nos = list(filter(lambda no: no % 2 != 0, numbers))
 
-square_nos = list(map(lambda no: no ** 2, even_nos))
+# 2. Read
+print('Number array', nos)
+print("Character array", chars)
+print("Joined string", ", ".join(list(map(str, chars))))
 
-# in python3 reduce is no longer built-in function
-sum_of_all = reduce(lambda acc, no: acc+no, numbers)
+evens = [n for n in nos if n % 2 == 0]
+print("Even nos", evens)
 
-print(even_nos, odd_nos, square_nos, sum_of_all)
+sqaures = list(map(lambda n: n * n, evens))
+print("Square of evens", sqaures)
 
+odds = list(filter(lambda n: n % 2 != 0, nos))
+print("Odd nos", odds)
+
+sum = reduce(lambda acc, n: acc+n, odds)
+print("Sum of odd nos", sum)
+
+
+# 3. Update
+ch = 'k'
+i = chars.index(ord(ch))
+print(f"Index of {ch} is {i}", chars)
+
+rep = 'm'
+chars[i] = ord(rep)
+print(f"Replaced {ch} with {rep}", chars)
+
+del chars[i]
+print(f"Deleted {i}th char which was {rep}", chars)
+
+ch = ord('a')
+chars.remove(ch)
+print(f'Removed {chr(ch)}', chars)
+
+ch = chars.pop() # last char also accepts index to pop out
+print(f'Popped {chr(ch)}')
